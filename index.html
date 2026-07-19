@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Espectro De Audio 🔊</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="Fantasma-neon 2.ico" type="image/x-icon" />
+  <script src="https://unpkg.com/music-metadata-browser/dist/music-metadata-browser.umd.js"></script>
+</head>
+<body>
+
+<div id="visualizer-wrapper">
+  <video id="bg" autoplay muted loop src="Rojo y Azul.mp4" class="blurred"></video>
+  <canvas id="canvas"></canvas>
+  <canvas id="trapCanvas" class="hidden"></canvas>
+  <canvas id="trapParticles" class="hidden"></canvas>
+
+  <!-- 🔥 Trap visualizador con imagen interna -->
+  <div id="trapCover" class="center hidden" style="width: 200px; height: 200px; border: 5px solid white; box-shadow: 0 0 40px white;">
+    <img id="trapImage" src="Fantasma-neon.jpg" alt="Portada Trap" />
+  </div>
+</div>
+
+<!-- 🎵 Visualizador circular principal -->
+<div class="center" id="circle">
+  <img id="cover" src="Fantasma-neon.jpg" alt="Portada" />
+</div>
+
+<!-- 🎛️ Controles -->
+<div class="controls">
+  <label>🎵 MP3 <input id="audioInput" type="file" accept="audio/*" /></label>
+  <label>🖼️ Imagen/Gif <input id="imgInput" type="file" accept="image/*" /></label>
+  <label>🎥 Fondo <input id="bgInput" type="file" accept="image/*,video/*" /></label>
+  <label>🌀 Temblor Pantalla <input id="toggleShakeGlobal" type="checkbox" checked /></label>
+  <label>👻 Temblor Círculo <input id="toggleShakeCircle" type="checkbox" checked /></label>
+  <label>💫 Desenfoque Fondo <input id="toggleBlur" type="checkbox" checked /></label>
+</div>
+
+<!-- 🔊 Audio player oculto -->
+<audio id="audio" src="sonidos/friv.mp3"></audio>
+
+<!-- 🎚️ Reproductor personalizado -->
+<div id="custom-player" class="controls player-controls">
+  <button id="playPauseBtn">▶️</button>
+  <span id="currentTime">0:00</span>
+  <input type="range" id="seekBar" value="0" min="0" max="100">
+  <span id="duration">0:00</span>
+  <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
+</div>
+
+<!-- 🧠 Atajos -->
+<div class="shortcuts" id="shortcuts">
+  <h3>🎹 Atajos de Teclado:</h3>
+  <ul>
+    <li><b>Q</b>: Mostrar/Ocultar interfaz</li>
+    <li><b>B</b>: Desenfoque fondo</li>
+    <li><b>V</b>: Cambiar visualizador</li>
+    <li><b>ESPACIO</b>: Pausa / Play</li>
+    <li><b>← / →</b>: Retroceder / Avanzar 5s</li>
+    <li><b>↑ / ↓</b>: Subir / Bajar volumen</li>
+  </ul>
+</div>
+
+<!-- 📜 Script JS -->
+<script src="script.js"></script>
+</body>
+</html>
