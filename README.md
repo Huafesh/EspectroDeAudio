@@ -1,15 +1,36 @@
-# EspectroDeAudio
+# 📊 Espectro de Audio - Reproductor & Visualizador
 
-Este repositorio contiene el código del proyecto **EspectroDeAudio**, clasificado como **Aplicación Frontend (Sitio Web estático)**.
+Un reproductor y visualizador de música web avanzado con renderizado interactivo en tiempo real utilizando HTML5 Canvas. Permite cambiar el fondo y el logo dinámicamente y admite capturas de audio por micrófono.
 
-## Tecnologías Utilizadas
+---
 
-- HTML5
-- CSS3 / JavaScript
+## 🚀 Características Principales
+
+* Visualizador interactivo basado en frecuencia y formas de onda en tiempo real.
+* Entrada dual: Carga tus archivos de música locales (`.mp3`) o captura audio del micrófono.
+* Personalización completa de interfaz: Cambia la carátula, el logotipo flotante y la imagen de fondo.
+* Controles de reproducción avanzados integrados con una barra de progreso responsiva.
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+* Web Audio API
+* HTML5 Canvas (2D Context)
+* JavaScript (ES6+)
+* CSS Custom Properties (Dark/Neon Glassmorphism)
+
+---
 
 ### Ejecución
 
-1. Abre el archivo `index.html` directamente en cualquier navegador web, o utiliza una extensión como *Live Server* en tu editor de código para ejecutarlo de forma local.
+Debido al uso de la *Web Audio API*, los navegadores requieren que este proyecto sea servido mediante un servidor HTTP local para poder procesar el audio sin errores de seguridad:
+
+1. Ejecuta un servidor local (como *Live Server* en VS Code o vía Python):
+   ```bash
+   python -m http.server 8000
+   ```
+2. Ingresa a `http://localhost:8000` en tu navegador.
 
 ---
-*Generado automáticamente para la organización y catalogación de proyectos.*
+*Este repositorio ha sido configurado y catalogado automáticamente.*
